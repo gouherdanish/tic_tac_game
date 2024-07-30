@@ -1,6 +1,6 @@
 from entities.cell import Cell
 
-class Board:
+class Grid:
     def __init__(self,nrows,ncols) -> None:
         self.nrows = nrows
         self.ncols = ncols

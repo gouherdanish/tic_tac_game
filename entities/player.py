@@ -1,8 +1,8 @@
 
 class Player:
-    def __init__(self,name:str) -> None:
+    def __init__(self,name:str,entity:str) -> None:
         self.name = name
-        self.entity = None
+        self.entity = entity
 
     def set_entity(self,entity):
         self.entity = entity

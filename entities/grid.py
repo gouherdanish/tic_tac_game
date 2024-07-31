@@ -4,8 +4,13 @@ class Grid:
     def __init__(self,nrows,ncols) -> None:
         self.nrows = nrows
         self.ncols = ncols
-        self.arr = [[None for i in nrows] for j in range(ncols)]
+        self.arr = [[None for i in range(nrows)] for j in range(ncols)]
 
     def __str__(self) -> str:
         return f'{self.arr}'
     
+    def set(self,row,col,entity):
+        self.arr[row][col] = entity
+    
+    def get(self,row,col):
+        return self.arr[row][col]

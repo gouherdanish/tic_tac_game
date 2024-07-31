@@ -1,4 +1,3 @@
-from entities.special_entity import SpecialEntity
 
 class Cell:
     def __init__(self,row,col) -> None:
@@ -12,8 +11,8 @@ class Cell:
     def __repr__(self) -> str:
         return str(self)
     
-    def set_value(self,val:SpecialEntity) -> None:
+    def set_value(self,val) -> None:
         self.value = val
 
-    def get_value(self) -> SpecialEntity:
+    def get_value(self):
         return self.value

@@ -1,21 +1,27 @@
+from entities.cell import Cell
+
 class Game:
 
-    def __init__(self,board) -> None:
-        self.board = board
+    def __init__(self,grid) -> None:
+        self.grid = grid
         self.players = []
-        self.numof_active_players = 0
-
-    def is_over(self):
-        return self.numof_active_players < len(self.players)
     
     def add_player(self,player):
         self.players.append(player)
-        self.numof_active_players += 1
+
+    def has_won(self,player):
+
     
     def start(self):
         """
         Cross Player starts the game and then both players play alternately
         First player who makes a sequence horizontally, vertically or diagonally, wins
         """
-        while not self.is_over():
-            pass
+        while True:
+            for player in self.players:
+                entity = player.get_entity()
+                row, col = input(f"Hey {player.name}, where to put '{entity}'?").split()
+                self.grid[row,col] = Cell(row,col,entity)
+                if self.has_won(player):
+                    print(f'{player.name} Won')
+                    break

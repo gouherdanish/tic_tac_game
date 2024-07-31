@@ -1,5 +1,3 @@
-from enum import Enum
 
-class EntityType(Enum):
-    CROSS = 'x'
-    CIRCLE = 'o'
+class EntityType:
+    ENTITIES = ['x','o','#','@']

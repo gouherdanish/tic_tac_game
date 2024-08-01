@@ -30,9 +30,11 @@ class Game:
         while not self.is_over():
             for player in self.players:
                 entity = player.get_entity()
+                self.grid.show()
                 row, col = map(int,input(f"Hey {player.name}, where to put '{entity}' ? ").split(' '))
                 self.grid.set(row,col,entity)
                 if self.has_won(player):
                     print(f'{player.name} Won')
+                    self.grid.show()
                     self.is_over_flag = True
                     break

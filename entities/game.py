@@ -56,5 +56,5 @@ class Game:
                 if self.has_won(player):
                     self.grid.show()
                     self.is_over_flag = True
-                    print(f'{player.name} Won')
+                    print(f'{player} Won')
                     break

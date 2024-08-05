@@ -5,7 +5,7 @@ class Player:
         self.entity = entity
 
     def __str__(self) -> str:
-        return f'{self.name} (played: {self.entity})'
+        return f'{self.name}'
 
     def set_entity(self,entity):
         self.entity = entity

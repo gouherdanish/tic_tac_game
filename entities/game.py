@@ -7,12 +7,29 @@ class Game:
         self.is_over_flag = False
     
     def add_player(self,player):
+        """
+        Function to add a new player to the current game
+
+        @param: player
+        """
         self.players.append(player)
 
     def is_over(self):
+        """
+        Function to flag if the game is over
+        """
         return self.is_over_flag
 
     def has_won(self,player):
+        """
+        Function to check if given player has won
+        e.g. there are 8 ways a player can win in a 3*3 grid
+        - 3 horizontal
+        - 3 vertical
+        - 2 diagonal
+
+        @param: player
+        """
         for j in range(self.grid.ncols):
             c1 = all(self.grid.get(i,j) == player.entity for i in range(self.grid.nrows))   # Vertical check at j
             c2 = all(self.grid.get(j,i) == player.entity for i in range(self.grid.nrows))   # Horizontal check at j
@@ -24,6 +41,8 @@ class Game:
     
     def start(self):
         """
+        Simulates the Game play
+
         Cross Player starts the game and then both players play alternately
         First player who makes a sequence horizontally, vertically or diagonally, wins
         """

@@ -1,5 +1,3 @@
-from entities.cell import Cell
-
 class Grid:
     def __init__(self,nrows,ncols) -> None:
         self.nrows = nrows
@@ -10,12 +8,28 @@ class Grid:
         return f'{self.arr}'
     
     def set(self,row,col,entity):
+        """
+        Set entity value at (row,col) position in the current grid
+
+        @param: row integer
+        @param: col integer
+        @param: entity
+        """
         self.arr[row][col] = entity
     
     def get(self,row,col):
+        """
+        Return entity value present at (row,col) position in the current grid
+        
+        @param: row integer
+        @param: col integer
+        """
         return self.arr[row][col]
     
     def show(self):
+        """
+        Prints the Grid
+        """
         for i in range(self.nrows):
             print('|'.join(self.arr[i]))
             if i == self.nrows - 1: break

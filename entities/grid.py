@@ -8,6 +8,12 @@ class Grid:
         return f'{self.arr}'
     
     def is_empty(self,row,col):
+        """
+        Checks if the cell at (row,col) position is empty
+        
+        @param: row integer
+        @param: col integer
+        """
         if self.arr[row][col] == '-':
             return True
         else:
@@ -15,6 +21,12 @@ class Grid:
             return False
         
     def is_valid(self,row,col):
+        """
+        Checks if the move (row,col) is valid
+        
+        @param: row integer
+        @param: col integer
+        """
         if 0 <= row < self.nrows and 0 <= col < self.ncols:
             return True
         else:

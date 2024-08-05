@@ -7,6 +7,20 @@ class Grid:
     def __str__(self) -> str:
         return f'{self.arr}'
     
+    def is_empty(self,row,col):
+        if self.arr[row][col] == '-':
+            return True
+        else:
+            print(f'The cell ({row},{col}) is already filled')
+            return False
+        
+    def is_valid(self,row,col):
+        if 0 <= row < self.nrows and 0 <= col < self.ncols:
+            return True
+        else:
+            print(f'The cell ({row},{col}) is out of bounds')
+            return False
+
     def set(self,row,col,entity):
         """
         Set entity value at (row,col) position in the current grid

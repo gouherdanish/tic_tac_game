@@ -1,5 +1,3 @@
-from entities.cell import Cell
-
 class Game:
     def __init__(self,grid) -> None:
         self.grid = grid
@@ -51,9 +49,12 @@ class Game:
                 entity = player.get_entity()
                 self.grid.show()
                 row, col = map(int,input(f"Hey {player.name}, where to put '{entity}' ? ").split(' '))
+                while not (self.grid.is_valid(row, col) and self.grid.is_empty(row, col)):
+                    print(f'Please choose another ', end = '')
+                    row, col = map(int,input().split(' '))
                 self.grid.set(row,col,entity)
                 if self.has_won(player):
-                    print(f'{player.name} Won')
                     self.grid.show()
                     self.is_over_flag = True
+                    print(f'{player.name} Won')
                     break
